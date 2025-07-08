@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detection Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='background2.jpg.webp') }}") no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            max-width: 700px;
+            width: 100%;
+            color: #333;
+        }
+
+        h2 {
+            font-weight: bold;
+            color: #0077b6;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .url {
+            word-wrap: break-word;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .result {
+            font-size: 1.2rem;
+            padding: 10px;
+            border-left: 6px solid #00b4d8;
+            background-color: #e0f7fa;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .btn-secondary {
+            background-color: #023e8a;
+            border-color: #023e8a;
+            margin-top: 20px;
+            font-weight: 500;
+            border-radius: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: #001d3d;
+            border-color: #001d3d;
+        }
+
+        .awareness {
+            background-color: #fff3cd;
+            border-left: 6px solid #ffc107;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+        }
+
+        .awareness h4 {
+            color: #856404;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .awareness ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .awareness ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>🔍 Phishing Scan Result</h2>
+        <p><strong>Scanned URL:</strong></p>
+        <div class="url">{{ url }}</div>
+
+        <p><strong>Analysis:</strong></p>
+        <div class="result">{{ result }}</div>
+
+        <div class="awareness">
+            <h4>⚠️ Phishing Awareness Tips:</h4>
+            <ul>
+                <li>Never click on suspicious or shortened links.</li>
+                <li>Always check for spelling mistakes in URLs.</li>
+                <li>Verify the sender before opening attachments or links in emails.</li>
+                <li>Look for HTTPS and a lock icon in the address bar.</li>
+                <li>Use antivirus and phishing protection tools.</li>
+            </ul>
+        </div>
+
+        <div class="d-grid gap-2">
+            <a href="/" class="btn btn-secondary">🔁 Check Another URL</a>
+        </div>
+    </div>
+</body>
+</html>
